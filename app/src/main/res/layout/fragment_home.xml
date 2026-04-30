@@ -1,38 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:gravity="center">
+    android:background="@color/background_white">
 
-    <TextView
-        android:id="@+id/tvBienvenue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bonjour"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="40dp" />
-
-    <Button
-        android:id="@+id/btnMedecins"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Médecins"
-        android:layout_marginBottom="16dp" />
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnRapports"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Rapports de visite"
-        android:layout_marginBottom="16dp" />
+        <!-- Header bleu -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:background="@color/electric_blue"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingTop="40dp"
+            android:paddingBottom="24dp">
 
-    <Button
-        android:id="@+id/btnFrais"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Fiches de frais" />
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_gsb_logo"
+                android:layout_marginBottom="16dp" />
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/tvBienvenue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bonjour"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- Carte infos visiteur -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:background="#F5F8FF"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mes informations"
+                android:textColor="@color/electric_blue"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Email -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tvEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_primary"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Séparateur -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E0E0E0"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Téléphone -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="Tél"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tvTel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_primary"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

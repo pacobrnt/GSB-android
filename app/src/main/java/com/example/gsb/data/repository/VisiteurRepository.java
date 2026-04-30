@@ -5,6 +5,7 @@ import com.example.gsb.data.network.ApiService;
 import com.example.gsb.data.network.AuthResponse;
 import com.example.gsb.data.network.LoginRequest;
 import com.example.gsb.data.network.TokenManager;
+import com.example.gsb.data.network.VisiteurResponse;
 
 import org.json.JSONObject;
 
@@ -38,7 +39,21 @@ public class VisiteurRepository {
             public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     tokenManager.saveToken(response.body().token);
-                    callback.onSuccess(response.body().visiteur);
+                    String visiteurId = response.body().visiteur.getId();
+                    apiService.getVisiteur(visiteurId).enqueue(new Callback<VisiteurResponse>() {
+                        @Override
+                        public void onResponse(Call<VisiteurResponse> call, Response<VisiteurResponse> r) {
+                            if (r.isSuccessful() && r.body() != null && r.body().data != null) {
+                                callback.onSuccess(r.body().data);
+                            } else {
+                                callback.onSuccess(response.body().visiteur);
+                            }
+                        }
+                        @Override
+                        public void onFailure(Call<VisiteurResponse> call, Throwable t) {
+                            callback.onSuccess(response.body().visiteur);
+                        }
+                    });
                 } else {
                     String errorMessage = "Identifiants incorrects";
                     try {

@@ -9,9 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.gsb.R;
 import com.example.gsb.databinding.FragmentHomeBinding;
 import com.example.gsb.viewmodel.VisiteurViewModel;
 
@@ -21,7 +19,6 @@ import dagger.hilt.android.AndroidEntryPoint;
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
-    private VisiteurViewModel vm;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -34,25 +31,14 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        vm = new ViewModelProvider(requireActivity()).get(VisiteurViewModel.class);
+        VisiteurViewModel vm = new ViewModelProvider(requireActivity()).get(VisiteurViewModel.class);
 
         vm.getVisiteurConnecte().observe(getViewLifecycleOwner(), visiteur -> {
-            if (visiteur != null) {
-                binding.tvBienvenue.setText("Bonjour, " + visiteur.getNomComplet());
-            }
+            if (visiteur == null) return;
+            binding.tvBienvenue.setText("Bonjour, " + visiteur.getNomComplet());
+            binding.tvEmail.setText(visiteur.getEmail());
+            binding.tvTel.setText(visiteur.getTel() != null ? visiteur.getTel() : "");
         });
-
-        binding.btnMedecins.setOnClickListener(v ->
-                NavHostFragment.findNavController(this)
-                        .navigate(R.id.action_home_to_listeMedecins));
-
-        binding.btnRapports.setOnClickListener(v ->
-                NavHostFragment.findNavController(this)
-                        .navigate(R.id.action_home_to_listeRapports));
-
-        binding.btnFrais.setOnClickListener(v ->
-                NavHostFragment.findNavController(this)
-                        .navigate(R.id.action_home_to_listeFrais));
     }
 
     @Override
