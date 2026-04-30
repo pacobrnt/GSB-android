@@ -15,4 +15,10 @@ public interface ApiService {
 
     @GET("visiteurs/{id}")
     Call<VisiteurResponse> getVisiteur(@Path("id") String id);
+
+    @GET("portefeuille/visiteur/{visiteurId}")
+    Call<PortefeuilleResponse> getPortefeuille(@Path("visiteurId") String visiteurId);
+
+    @GET("praticiens/{id}")
+    Call<PraticienResponse> getPraticien(@Path("id") String id);
 }

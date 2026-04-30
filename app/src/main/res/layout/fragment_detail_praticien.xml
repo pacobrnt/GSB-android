@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_white">
+
+    <!-- Header bleu -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@color/electric_blue"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/btnRetour"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_arrow_back"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Retour" />
+
+        <TextView
+            android:id="@+id/tvNomPraticien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Infos -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="16dp"
+        android:background="#F5F8FF"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Coordonnées"
+            android:textColor="@color/electric_blue"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+            <TextView android:layout_width="90dp" android:layout_height="wrap_content"
+                android:text="Téléphone" android:textColor="#666666" android:textSize="13sp" />
+            <TextView android:id="@+id/tvTel" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textColor="#1A1A1A" android:textSize="13sp" />
+        </LinearLayout>
+
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+            android:background="#E0E0E0" android:layout_marginBottom="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+            <TextView android:layout_width="90dp" android:layout_height="wrap_content"
+                android:text="Email" android:textColor="#666666" android:textSize="13sp" />
+            <TextView android:id="@+id/tvEmail" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textColor="#1A1A1A" android:textSize="13sp" />
+        </LinearLayout>
+
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+            android:background="#E0E0E0" android:layout_marginBottom="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+            <TextView android:layout_width="90dp" android:layout_height="wrap_content"
+                android:text="Adresse" android:textColor="#666666" android:textSize="13sp" />
+            <TextView android:id="@+id/tvAdresse" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textColor="#1A1A1A" android:textSize="13sp" />
+        </LinearLayout>
+
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+            android:background="#E0E0E0" android:layout_marginBottom="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView android:layout_width="90dp" android:layout_height="wrap_content"
+                android:text="Ville" android:textColor="#666666" android:textSize="13sp" />
+            <TextView android:id="@+id/tvVille" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textColor="#1A1A1A" android:textSize="13sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -21,6 +21,16 @@
         android:id="@+id/homeFragment"
         android:name="com.example.gsb.ui.home.HomeFragment"
         android:label="Accueil"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_detail_praticien"
+            app:destination="@id/detailPraticienFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailPraticienFragment"
+        android:name="com.example.gsb.ui.praticien.DetailPraticienFragment"
+        android:label="Détail praticien"
+        tools:layout="@layout/fragment_detail_praticien" />
 
 </navigation>
