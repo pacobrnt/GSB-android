@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+
+    <!-- Cercle de fond bleu électrique -->
+    <path
+        android:fillColor="#0047FF"
+        android:pathData="M48,4 A44,44 0 1,1 47.999,4 Z" />
+
+    <!-- Croix médicale blanche -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M55,28 H41 V41 H28 V55 H41 V68 H55 V55 H68 V41 H55 Z" />
+
+</vector>

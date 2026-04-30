@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/tvBienvenue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bonjour"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="40dp" />
+
+    <Button
+        android:id="@+id/btnMedecins"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Médecins"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btnRapports"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rapports de visite"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btnFrais"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fiches de frais" />
+
+</LinearLayout>

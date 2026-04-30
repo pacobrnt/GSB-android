@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.gsb.ui.login.LoginFragment"
+        android:label="Connexion"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.gsb.ui.home.HomeFragment"
+        android:label="Accueil"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_listeMedecins"
+            app:destination="@id/listeMedecinsFragment" />
+        <action
+            android:id="@+id/action_home_to_listeRapports"
+            app:destination="@id/listeRapportsFragment" />
+        <action
+            android:id="@+id/action_home_to_listeFrais"
+            app:destination="@id/listeFraisFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/listeMedecinsFragment"
+        android:name="com.example.gsb.ui.medecins.ListeMedecinsFragment"
+        android:label="Médecins"
+        tools:layout="@layout/fragment_liste_medecins">
+        <action
+            android:id="@+id/action_listeMedecins_to_detailMedecin"
+            app:destination="@id/detailMedecinFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailMedecinFragment"
+        android:name="com.example.gsb.ui.medecins.DetailMedecinFragment"
+        android:label="Détail médecin"
+        tools:layout="@layout/fragment_detail_medecin" />
+
+    <fragment
+        android:id="@+id/listeRapportsFragment"
+        android:name="com.example.gsb.ui.rapports.ListeRapportsFragment"
+        android:label="Rapports de visite"
+        tools:layout="@layout/fragment_liste_rapports">
+        <action
+            android:id="@+id/action_listeRapports_to_createRapport"
+            app:destination="@id/createRapportFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createRapportFragment"
+        android:name="com.example.gsb.ui.rapports.CreateRapportFragment"
+        android:label="Nouveau rapport"
+        tools:layout="@layout/fragment_create_rapport" />
+
+    <fragment
+        android:id="@+id/listeFraisFragment"
+        android:name="com.example.gsb.ui.frais.ListeFraisFragment"
+        android:label="Fiches de frais"
+        tools:layout="@layout/fragment_liste_frais" />
+
+</navigation>
